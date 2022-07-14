@@ -1,13 +1,35 @@
 import React from 'react';
-import { styled } from '@material-ui/core/styles';
-import { compose, spacing, palette } from '@material-ui/system';
+import { makeStyles } from '@material-ui/core/styles';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
+import itemData from './itemData';
+ 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  imageList: {
+    width: 500,
+    height: 450,
+  },
+}));
 
-const Box = styled('div')(compose(spacing, palette));
+export default function BasicImageList() {
+  const classes = useStyles();
 
-export default function JSS() {
   return (
-    <Box color="white" bgcolor="palevioletred" p={1}>
-      JSS
-    </Box>
+    <div className={classes.root}>
+      <ImageList rowHeight={160} className={classes.imageList} cols={3}>
+        {itemData.map((item) => (
+          <ImageListItem key={item.img} cols={item.cols || 1}>
+            <img src={item.img} alt={item.title} />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </div>
   );
-  }
+}
