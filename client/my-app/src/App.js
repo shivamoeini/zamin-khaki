@@ -1,12 +1,13 @@
-
 import React from 'react';
-import Button from '@material-ui/core/Button';
-function App() {
-  return (
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-  );
-}
+import { styled } from '@material-ui/core/styles';
+import { compose, spacing, palette } from '@material-ui/system';
 
-export default App;
+const Box = styled('div')(compose(spacing, palette));
+
+export default function JSS() {
+  return (
+    <Box color="white" bgcolor="palevioletred" p={1}>
+      JSS
+    </Box>
+  );
+  }
