@@ -1,18 +1,76 @@
-// import React from "react";
+import React from "react";
+function Greeting() {
+  return <span>Hello</span>;
+}
 
-// import {
-//   Typography,
-//   AppBar,
-//   Card,
-//   CardActions,
-//   CardContent,
-//   CardMedia,
-//   CssBaseline,
-//   Grid,
-//   Toolbar,
-//   Container,
-// } from "@material-ui/core";
+function Mentor() {
+  const mentors = ["Benyamin", "Alireza", "Maryam", "Mahjan", "Bahar"];
+  return <span>{mentors.join(" , ")}</span>;
+}
 
-// const App = () => {
+function Addition() {
+  return <span>{1 + 2 + 3}</span>;
+}
 
-// export default App;
+function Weather() {
+  // abject
+  const weatherDate = {
+    temperature: 5,
+    location: "London",
+  };
+  return (
+    <h5>
+      {" "}
+      the temperature in {weatherDate.location}is {weatherDate.temperature}
+    </h5>
+  );
+}
+
+
+function formatName(userr){
+    return userr.firstName+" "+ userr.lastName;
+}
+function Name(){
+    const user={
+        firstName:"shiva",
+        lastName:"Moeini"
+    };
+    return <h1>{formatName(user)}</h1>
+}
+
+const mentors=["shiva","shila","rena","dina"];
+function MentorList(){
+return(
+    <ol>
+        {mentors.map((name)=>(
+           <li>{name}</li>
+        ))}
+    </ol>
+)
+}
+function App() {
+  return (
+    <div>
+      <Greeting />
+      <Mentor />
+      <br />
+      =================================
+      <br />
+      <Addition />
+      <br />
+      =================================
+      <br />
+      <Weather />
+      <br />
+      =================================
+      <br />
+      <Name/>
+      <br />
+      =================================
+      <br />
+      <MentorList/>
+    </div>
+  );
+}
+
+export default App;
