@@ -152,3 +152,19 @@ count:0
  }
 }
 export default Example;
+
+
+
+// Hook and function Components
+// 1)
+
+// const Example=(props)=>{
+//   // you can use Hooks here!
+//   return <div/>
+// }
+
+// 2)
+// function Example(props){
+//   // you can use hooks hrer!
+//   return <div/>
+// }
