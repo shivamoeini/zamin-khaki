@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 // function Greeting() {
 //   return <span>Hello</span>;
 // }
@@ -112,23 +112,43 @@
 //   return isOnline ? 'Online' : 'Offline';
 // }
 
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
-export default function Example() {
-  const [count, setCount] = useState(0);
+// export default function Example() {
+//   const [count, setCount] = useState(0);
 
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-  });
+//   // Similar to componentDidMount and componentDidUpdate:
+//   useEffect(() => {
+//     // Update the document title using the browser API
+//     document.title = `You clicked ${count} times`;
+//   });
 
-  return (
+//   return (
+//     <div>
+//       <p>You clicked {count} times</p>
+//       <button onClick={() => setCount(count + 1)}>
+//         Click me
+//       </button>
+//     </div>
+//   );
+// }
+
+
+class Example extends React.Component{
+  constructor(){
+    super();
+    this.state={
+count:0
+    };
+  }
+
+ render(){
+  return(
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <p>your clicked {this.state.count} times</p>
+      <button onClick={()=>this.setState({count:this.state.count+1})}>clicked me</button>
     </div>
-  );
+  )
+ }
 }
+export default Example;
