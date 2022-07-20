@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from './App'
+import App from './App'
 // function Welcome(props){
 //   return <h1>Hello,{props.name}</h1>
 // }
@@ -114,35 +114,36 @@ import ReactDOM from "react-dom/client";
 //     }
 
 //   }
-class Clock extends React.Component{
-  constructor(){
-    super();
-    this.state={date:new Date()};
-  }
-  componentDidMount(){
-    this.timerID=setInterval(
-      ()=>this.tick(),1000
-    );
-  }
-  componentWillUnmount(){
-    clearInterval(this.timerID)
-  }
-  tick(){
-   this.setState({
-     date:new Date()
-   });
-  }
+// class Clock extends React.Component{
+//   constructor(){
+//     super();
+//     this.state={date:new Date()};
+//   }
+//   componentDidMount(){
+//     this.timerID=setInterval(
+//       ()=>this.tick(),1000
+//     );
+//   }
+//   componentWillUnmount(){
+//     clearInterval(this.timerID)
+//   }
+//   tick(){
+//    this.setState({
+//      date:new Date()
+//    });
+//   }
   
- render(){
-  return(
-    <div>
-      <h1>Hello,World!</h1>
-      <h2>It is {this.state.date.toLocaleTimeString()}</h2>
-    </div>
-  )
- }
-}
+//  render(){
+//   return(
+//     <div>
+//       <h1>Hello,World!</h1>
+//       <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+//     </div>
+//   )
+//  }
+// }
   const root = ReactDOM.createRoot(document.getElementById('root'));
 
-  root.render(<Clock />)
+  // root.render(<Clock />)
+  root.render(<App/>)
 
