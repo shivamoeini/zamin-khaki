@@ -76,15 +76,38 @@
 // export default App;
 
 
-import React ,{useState}from "react";
+// import React ,{useState}from "react";
 
- export default function Example(){
-  const [count,setCount]=useState(0);
+//  export default function Example(){
+//   const [count,setCount]=useState(0);
 
-  return(
-    <div>
-      <p>you clicked {count} times</p>
-      <button onClick={()=>setCount(count+1)}>clicked me</button>
-    </div>
-  )
-}
+//   return(
+//     <div>
+//       <p>you clicked {count} times</p>
+//       <button onClick={()=>setCount(count+1)}>clicked me</button>
+//     </div>
+//   )
+// }
+
+
+// import React, { useState, useEffect } from 'react';
+
+// export default function FriendStatus(props) {
+//   const [isOnline, setIsOnline] = useState(null);
+
+//   function handleStatusChange(status) {
+//     setIsOnline(status.isOnline);
+//   }
+
+//   useEffect(() => {
+//     ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+//     return () => {
+//       ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+//     };
+//   });
+
+//   if (isOnline === null) {
+//     return 'Loading...';
+//   }
+//   return isOnline ? 'Online' : 'Offline';
+// }
