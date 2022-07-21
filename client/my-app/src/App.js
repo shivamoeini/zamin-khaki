@@ -186,29 +186,54 @@
 
 // classes useeffect
 
-import React from "react";
+// import React from "react";
 
-class Example extends React.Component{
-constructor(){
-  super();
-  this.state={
-    count:0
-  };
-}
+// class Example extends React.Component{
+// constructor(){
+//   super();
+//   this.state={
+//     count:0
+//   };
+// }
 
-componentDidMount(){
-  document.title=`you clicked  ${this.state.count+1} times`;
-}
-componentDidUpdate(){
-  document.title=`you clicked${this.state.count}times`;
-}
-render(){
-  return(
-    <div>
-      <p>you clicked {this.state.count} times</p>
-      <button onClick={()=>this.setState({count:this.state.count+1})}>clieck me</button>
-    </div>
-  )
-}
+// componentDidMount(){
+//   document.title=`you clicked  ${this.state.count+1} times`;
+// }
+// componentDidUpdate(){
+//   document.title=`you clicked${this.state.count}times`;
+// }
+// render(){
+//   return(
+//     <div>
+//       <p>you clicked {this.state.count} times</p>
+//       <button onClick={()=>this.setState({count:this.state.count+1})}>clieck me</button>
+//     </div>
+//   )
+// }
+// }
+// export default Example;
+
+
+
+
+
+// use state use Efffect
+
+import React,{useState,useEffect} from 'react';
+
+function Example(){ 
+
+const [count,setCount]=useState(0);
+
+useEffect(()=>{
+  document.title=`you clicked ${count} times`;
+
+});
+return(
+  <div>
+    <p>you clicked {count} times</p>
+    <button onClick={()=>setCount(count+1)}>clicked me</button>
+  </div>
+)
 }
 export default Example;
