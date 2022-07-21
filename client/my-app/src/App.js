@@ -219,21 +219,21 @@
 
 // use state use Efffect
 
-import React,{useState,useEffect} from 'react';
+// import React,{useState,useEffect} from 'react';
 
-function Example(){ 
+// function Example(){ 
 
-const [count,setCount]=useState(0);
+// const [count,setCount]=useState(0);
 
-useEffect(()=>{
-  document.title=`you clicked ${count} times`;
+// useEffect(()=>{
+//   document.title=`you clicked ${count} times`;
 
-});
-return(
-  <div>
-    <p>you clicked {count} times</p>
-    <button onClick={()=>setCount(count+1)}>clicked me</button>
-  </div>
-)
-}
-export default Example;
+// });
+// return(
+//   <div>
+//     <p>you clicked {count} times</p>
+//     <button onClick={()=>setCount(count+1)}>clicked me</button>
+//   </div>
+// )
+// }
+// export default Example;
