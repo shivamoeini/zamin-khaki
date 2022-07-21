@@ -153,17 +153,17 @@
 // }
 // export default Example;
 // ************function ***************
-import React ,{useState}from "react";
+// import React ,{useState}from "react";
 
-export default function Example(){
-const [count,setCount]=useState(0);
-return(
-  <div>
-    <p>You clicked {count} times</p>
-    <button onClick={()=>setCount(count+1)}>clicked me</button>
-  </div>
-)
-}
+// export default function Example(){
+// const [count,setCount]=useState(0);
+// return(
+//   <div>
+//     <p>You clicked {count} times</p>
+//     <button onClick={()=>setCount(count+1)}>clicked me</button>
+//   </div>
+// )
+// }
 
 // Hook and function Components
 // 1)
@@ -178,3 +178,37 @@ return(
 //   // you can use hooks hrer!
 //   return <div/>
 // }
+
+
+
+
+
+
+// classes useeffect
+
+import React from "react";
+
+class Example extends React.Component{
+constructor(){
+  super();
+  this.state={
+    count:0
+  };
+}
+
+componentDidMount(){
+  document.title=`you clicked  ${this.state.count+1} times`;
+}
+componentDidUpdate(){
+  document.title=`you clicked${this.state.count}times`;
+}
+render(){
+  return(
+    <div>
+      <p>you clicked {this.state.count} times</p>
+      <button onClick={()=>this.setState({count:this.state.count+1})}>clieck me</button>
+    </div>
+  )
+}
+}
+export default Example;
